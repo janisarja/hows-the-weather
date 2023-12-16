@@ -1,14 +1,33 @@
 import React from 'react';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 import './weather-info.css';
 import { Searchmenu, Weather, Temperature } from '../../components';
 
-const WeatherInfo = ({ city, handleCityChange, weather, temp }) => {
+const apiKey = '9dd31d462321665a6103dba10ebe21d0';
+
+const WeatherInfo = () => {
+  const [city, setCity] = useState([]);
+  const [weather, setWeather] = useState([]);
+  const [temp, setTemp] = useState(0);
+
+  useEffect(() => {
+    if ( city['lat'] && city['lon'] ) {
+      axios
+        .get(`https://api.openweathermap.org/data/2.5/weather?lat=${city['lat']}&lon=${city['lon']}&appid=${apiKey}`)
+        .then(response => response.data)
+        .then(data => {
+          setWeather(data['weather'][0]);
+          setTemp(data['main']['temp']);
+        })
+    }
+  }, [city]);
   return (
     <div>
       <h2>City</h2>
       <Searchmenu 
         city={city}
-        handleCityChange={(c) => handleCityChange(c)}
+        handleCityChange={(c) => setCity(c)}
       />
       <h2>Weather</h2>
       <Weather 

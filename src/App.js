@@ -1,42 +1,17 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
-
 import { Footer, Header, WeatherInfo } from './containers';
-import axios from 'axios';
 
 const apiKey = '9dd31d462321665a6103dba10ebe21d0';
 
 const App = () => {
-  const [city, setCity] = useState([]);
-  const [weather, setWeather] = useState([]);
-  const [temp, setTemp] = useState(0);
 
-  useEffect(() => {
-    if ( city['lat'] && city['lon'] ) {
-      axios
-        .get(`https://api.openweathermap.org/data/2.5/weather?lat=${city['lat']}&lon=${city['lon']}&appid=${apiKey}`)
-        .then(response => response.data)
-        .then(data => {
-          setWeather(data['weather'][0]);
-          setTemp(data['main']['temp']);
-        })
-    }
-  }, [city]);
 
   return (
     <div className='App'>
       <div className='gradient__top'>
         <Header />
-        <WeatherInfo 
-          city={city}
-          handleCityChange={(c) => setCity(c)}
-          weather={weather}
-          temp={temp}
-        />
+        <WeatherInfo />
       </div>
-      <div className='gradient__bottom'>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   )
 }
