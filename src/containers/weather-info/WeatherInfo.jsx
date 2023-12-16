@@ -9,7 +9,7 @@ const apiKey = '9dd31d462321665a6103dba10ebe21d0';
 const WeatherInfo = () => {
   const [city, setCity] = useState([]);
   const [weather, setWeather] = useState([]);
-  const [temp, setTemp] = useState(0);
+  const [mainData, setMainData] = useState(0);
 
   useEffect(() => {
     if ( city['lat'] && city['lon'] ) {
@@ -18,7 +18,7 @@ const WeatherInfo = () => {
         .then(response => response.data)
         .then(data => {
           setWeather(data['weather'][0]);
-          setTemp(data['main']['temp']);
+          setMainData(data['main']);
         })
     }
   }, [city]);
@@ -35,7 +35,7 @@ const WeatherInfo = () => {
       />
       <h2>Temperature</h2>
       <Temperature 
-        temp={temp}
+        data={mainData}
       />
     </div>
   )
