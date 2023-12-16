@@ -5,8 +5,8 @@ const Temperature = ({ data }) => {
   if ( data ) {
     return (
       <div>
-        <p>{Math.round(data['temp'])} °C</p>
-        <p>feels like {Math.round(data['feels_like'])} °C</p>
+        <p>{Math.round(data['temp']-273.15)} °C</p>
+        <p>feels like {Math.round(data['feels_like']-273.15)} °C</p>
       </div>
     )
   }

@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import './weather-info.css';
-import { Searchmenu, Weather, Temperature } from '../../components';
+import { Searchmenu, Weather, Temperature, Wind } from '../../components';
 
 const apiKey = '9dd31d462321665a6103dba10ebe21d0';
 
@@ -10,6 +10,7 @@ const WeatherInfo = () => {
   const [city, setCity] = useState([]);
   const [weather, setWeather] = useState([]);
   const [mainData, setMainData] = useState(0);
+  const [wind, setWind] = useState(0);
 
   useEffect(() => {
     if ( city['lat'] && city['lon'] ) {
@@ -19,6 +20,7 @@ const WeatherInfo = () => {
         .then(data => {
           setWeather(data['weather'][0]);
           setMainData(data['main']);
+          setWind(data['wind']);
         })
     }
   }, [city]);
@@ -36,6 +38,10 @@ const WeatherInfo = () => {
       <h2>Temperature</h2>
       <Temperature 
         data={mainData}
+      />
+      <h2>Wind</h2>
+      <Wind 
+        wind={wind}
       />
     </div>
   )
