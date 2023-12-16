@@ -14,7 +14,7 @@ const WeatherInfo = () => {
   useEffect(() => {
     if ( city['lat'] && city['lon'] ) {
       axios
-        .get(`https://api.openweathermap.org/data/2.5/weather?lat=${city['lat']}&lon=${city['lon']}&appid=${apiKey}`)
+        .get(`https://api.openweathermap.org/data/2.5/weather?lat=${city['lat']}&lon=${city['lon']}&appid=${apiKey}&units=metric`)
         .then(response => response.data)
         .then(data => {
           setWeather(data['weather'][0]);
