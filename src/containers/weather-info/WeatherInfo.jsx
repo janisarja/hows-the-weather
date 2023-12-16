@@ -2,7 +2,7 @@ import React from 'react';
 import './weather-info.css';
 import { Searchmenu, Weather, Temperature } from '../../components';
 
-const WeatherInfo = ({ city, handleCityChange, weather }) => {
+const WeatherInfo = ({ city, handleCityChange, weather, temp }) => {
   return (
     <div>
       <h2>City</h2>
@@ -13,6 +13,10 @@ const WeatherInfo = ({ city, handleCityChange, weather }) => {
       <h2>Weather</h2>
       <Weather 
         weather={weather}
+      />
+      <h2>Temperature</h2>
+      <Temperature 
+        temp={temp}
       />
     </div>
   )

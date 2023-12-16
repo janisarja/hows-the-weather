@@ -9,6 +9,7 @@ const apiKey = '9dd31d462321665a6103dba10ebe21d0';
 const App = () => {
   const [city, setCity] = useState([]);
   const [weather, setWeather] = useState([]);
+  const [temp, setTemp] = useState(0);
 
   useEffect(() => {
     if ( city['lat'] && city['lon'] ) {
@@ -17,6 +18,7 @@ const App = () => {
         .then(response => response.data)
         .then(data => {
           setWeather(data['weather'][0]);
+          setTemp(data['main']['temp']);
         })
     }
   }, [city]);
@@ -29,6 +31,7 @@ const App = () => {
           city={city}
           handleCityChange={(c) => setCity(c)}
           weather={weather}
+          temp={temp}
         />
       </div>
       <div className='gradient__bottom'>
