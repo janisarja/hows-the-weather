@@ -1,0 +1,6 @@
+.arrow {
+  margin-left: calc(50% - 32px);
+  height: auto;
+  padding-top: 25px;
+  color: white;
+}

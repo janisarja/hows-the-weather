@@ -1,0 +1,43 @@
+.infobox {
+  background: var(--color-main);
+  padding: auto;
+  min-width: 300px;
+  height: 150px;
+  box-sizing: border-box;
+  border-radius: 25px;
+}
+
+.searchmenu {
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+  max-width: 1170px;
+}
+
+.infoarea {
+  margin: auto;
+  max-width: 1170px;
+  padding-top: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 50px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+}
+
+.info {
+  height: 115px;
+}
+
+@media screen and (max-width: 985px) {
+  .infoarea {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .infoarea {
+    grid-template-columns: auto;
+  }
+}

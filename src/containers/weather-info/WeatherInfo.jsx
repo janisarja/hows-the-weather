@@ -26,23 +26,41 @@ const WeatherInfo = () => {
   }, [city]);
   return (
     <div>
-      <h2>City</h2>
-      <Searchmenu 
-        city={city}
-        handleCityChange={(c) => setCity(c)}
-      />
-      <h2>Weather</h2>
-      <Weather 
-        weather={weather}
-      />
-      <h2>Temperature</h2>
-      <Temperature 
-        data={mainData}
-      />
-      <h2>Wind</h2>
-      <Wind 
-        wind={wind}
-      />
+      <div className='searchmenu'>
+        <h2>City</h2>
+        <div>
+          <Searchmenu 
+            city={city}
+            handleCityChange={(c) => setCity(c)}
+          />
+        </div>
+      </div>
+      <div className='infoarea'>
+        <div>
+          <h2>Weather</h2>
+          <div className='infobox'>
+            <Weather 
+              weather={weather}
+            />
+          </div>
+        </div>
+        <div>
+          <h2>Temperature</h2>
+          <div className='infobox'>
+            <Temperature 
+              data={mainData}
+            />
+          </div>
+        </div>
+        <div>
+          <h2>Wind</h2>
+          <div className='infobox'>
+            <Wind 
+              wind={wind}
+            />
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

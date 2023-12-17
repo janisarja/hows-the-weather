@@ -42,6 +42,8 @@ const Searchmenu = ({ handleCityChange }) => {
     <div>
       <div>
         <input 
+          id='city'
+          placeholder='Search...'
           value={search}
           onChange={handleSearchChange}
           onKeyDown={handleEnterKey}
@@ -52,15 +54,15 @@ const Searchmenu = ({ handleCityChange }) => {
         {options.map((option, index) => {
           if ( option['state'] ) {
             return (
-              <div key={index} onClick={() => handleSelection(option)}>
+              <p key={index} onClick={() => handleSelection(option)} className='result'>
                 {option['name']}, {option['state']}, {option['country']}
-              </div>
+              </p>
             );
           }
           return (
-            <div key={index} onClick={() => handleSelection(option)}>
+            <p key={index} onClick={() => handleSelection(option)} className='result'>
               {option['name']}, {option['country']}
-            </div>
+            </p>
           );
         })}
       </div>
