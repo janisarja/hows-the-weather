@@ -10,10 +10,12 @@ const Searchmenu = ({ handleCityChange }) => {
   const [options, setOptions] = useState([]);
 
   const handleSearch = () => {
-    axios
-      .get(`http://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=10&appid=${apiKey}`)
-      .then(response => response.data)
-      .then(results => setOptions(results));
+    if ( search ) {
+      axios
+        .get(`http://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=10&appid=${apiKey}`)
+        .then(response => response.data)
+        .then(results => setOptions(results));
+    }
   }
 
   const handleSearchChange = (event) => {
