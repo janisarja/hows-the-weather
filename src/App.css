@@ -7,7 +7,7 @@
 
 .gradient__bg {
   background: linear-gradient(#070725, #3F3F44);
-  min-height: calc(100vh - 171px);
+  min-height: calc(100vh - 154px);
 }
 
 h1 {
