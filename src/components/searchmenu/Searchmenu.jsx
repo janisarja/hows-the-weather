@@ -12,7 +12,7 @@ const Searchmenu = ({ handleCityChange }) => {
   const handleSearch = () => {
     if ( search ) {
       axios
-        .get(`http://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=10&appid=${apiKey}`)
+        .get(`https://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=10&appid=${apiKey}`)
         .then(response => response.data)
         .then(results => setOptions(results));
     }
