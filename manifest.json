@@ -1,0 +1,9 @@
+{
+  "short_name": "How's the Weather?",
+  "name": "How's the Weather?",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0D0F20",
+  "background_color": "#0D0F20"
+}
