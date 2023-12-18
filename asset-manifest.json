@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/hows-the-weather/static/css/main.0c65b374.css",
-    "main.js": "/hows-the-weather/static/js/main.b774ea7f.js",
+    "main.js": "/hows-the-weather/static/js/main.5b7ac592.js",
     "index.html": "/hows-the-weather/index.html",
     "main.0c65b374.css.map": "/hows-the-weather/static/css/main.0c65b374.css.map",
-    "main.b774ea7f.js.map": "/hows-the-weather/static/js/main.b774ea7f.js.map"
+    "main.5b7ac592.js.map": "/hows-the-weather/static/js/main.5b7ac592.js.map"
   },
   "entrypoints": [
     "static/css/main.0c65b374.css",
-    "static/js/main.b774ea7f.js"
+    "static/js/main.5b7ac592.js"
   ]
 }
